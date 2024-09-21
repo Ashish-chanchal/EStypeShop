@@ -4,7 +4,7 @@ import Hero from "./components/Hero/Hero"
 import NavBar from "./components/NavBar/NavBar"
 import Services from "./components/Services/Services"
 import headphone from '/src/assets/hero/headphone.png';
-import watch from '/src/assets/Category/watch2.png';
+import watch2 from '/src/assets/Category/watch2.png';
 import Products from "./components/Products/Products"
 const BannerData=[
   {
@@ -23,7 +23,7 @@ const BannerData=[
     discount:'30% OFF',
     title:"Happy Hours",
     date:"14 Jan to 28 Jan",
-    image:watch,
+    image:watch2,
     title2:"Smart Solo",
     title3:"Winter Sale",
     title4:" Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.",
