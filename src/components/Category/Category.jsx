@@ -45,7 +45,7 @@ const Category = () => {
                         <p className='text-2xl font-semibold mb-[2px]'>With</p>
                         <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Laptop</p>
                         <Button text="Browse" bgColor="bg-white mt-2"
-                        textColor={"text-brandYellow"} />
+                        textColor={"text-primary"} />
                     </div>
                 </div>
                 <img src={Image3} alt="Watch" className='w-[320px] absolute right-0 top-[0px]'/>
@@ -53,7 +53,7 @@ const Category = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
             {/* first div  */}
-            <div className='py-10 sm:col-span-2 pl-5 bg-gradient-to-r from-gray-400 to-brandWhite/90 text-white rounded-3xl relative h-[320px] flex items-end'>
+            <div className='py-10 sm:col-span-2 pl-5 bg-gradient-to-r from-gray-400 to-brandWhite/90 text-white rounded-3xl relative h-[320px] flex items-start'>
                 <div >
                     <div className='mb-4 '>
                         <p className='mb-[2px] text-gray-400'>Enjoy</p>
@@ -66,7 +66,7 @@ const Category = () => {
                 <img src={Image4} alt="Headphones" className='w-[320px] absolute bottom-0 right-10'/>
             </div>
             {/* second div  */}
-            <div className='py-10 pl-5 bg-gradient-to-r from-brandGreen to-brandGreen/90 text-white rounded-3xl relative h-[320px] flex items-end'>
+            <div className='py-10 pl-5 bg-gradient-to-r from-brandGreen to-brandGreen/90 text-white rounded-3xl relative h-[320px] flex items-start'>
                 <div >
                     <div className='mb-4 '>
                         <p className='mb-[2px] text-white'>Enjoy</p>
@@ -79,7 +79,7 @@ const Category = () => {
                 <img src={Image5} alt="Watch" className='w-[250px] absolute right-5 bottom-[0px]'/>
             </div>
             {/* third div  */}
-            <div className='py-10  pl-5 bg-gradient-to-r from-brandBlue to-brandBlue/90 text-white rounded-3xl relative h-[320px] flex items-end'>
+            <div className='py-10  pl-5 bg-gradient-to-r from-brandBlue to-brandBlue/90 text-white rounded-3xl relative h-[320px] flex items-start'>
                 <div >
                     <div className='mb-4 top-10'>
                         <p className='mb-[2px] text-white'>Enjoy</p>
