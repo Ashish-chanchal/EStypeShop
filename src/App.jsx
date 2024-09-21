@@ -16,7 +16,8 @@ const BannerData=[
     title2:"Air Solo Bass",
     title3:"Winter Sale",
     title4:" Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.",
-    bgColor:"primary"
+    textColor:"text-primary",
+    bgColor:"bg-primary"
   },
   {
     id:2,
@@ -27,7 +28,8 @@ const BannerData=[
     title2:"Smart Solo",
     title3:"Winter Sale",
     title4:" Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.",
-    bgColor:"brandGreen"
+    textColor:"text-brandGreen",
+    bgColor:"bg-brandGreen"
   },
 ]
 function App() {

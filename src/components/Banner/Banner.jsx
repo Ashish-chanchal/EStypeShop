@@ -5,7 +5,7 @@ const Banner = ({data}) => {
   return (
     <div className='min-h-[550px] flex justify-center items-center py-12'>
       <div className='container'>
-        <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-white rounded-3xl bg-${data.bgColor} relative`}>
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-white rounded-3xl ${data.bgColor} relative`}>
             {/* first col */}
 <div className='p-6 sm:p-8'>
     <p className='text-sm'>{data.discount}</p>
@@ -22,7 +22,7 @@ const Banner = ({data}) => {
             <p className='text-3xl sm:text-5xl font-bold'>{data.title3}</p>
             <p className='text-sm tracking-wide leading-5'>{data.title4}</p>
             <div>
-                <Button text='Shop Now' bgColor={"bg-white"} textColor={`text-${data.bgColor}`}/>
+                <Button text='Shop Now' bgColor={"bg-white"} textColor={data.textColor}/>
             </div>
         </div>
         </div>
