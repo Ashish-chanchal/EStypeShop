@@ -4,7 +4,7 @@ import Hero from "./components/Hero/Hero"
 import NavBar from "./components/NavBar/NavBar"
 import Services from "./components/Services/Services"
 import headphone from '/src/assets/hero/headphone.png';
-import watch2 from '/src/assets/Category/watch2.png';
+import watch2 from '/src/assets/category/watch2.png';
 import Products from "./components/Products/Products"
 const BannerData=[
   {
