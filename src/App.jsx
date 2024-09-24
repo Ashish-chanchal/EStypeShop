@@ -6,6 +6,8 @@ import Services from "./components/Services/Services"
 import headphone from '/src/assets/hero/headphone.png';
 import watch2 from '/src/assets/category/watch2.png';
 import Products from "./components/Products/Products"
+import Blogs from "./components/Blogs/Blogs"
+import Parnters from "./components/Partners/Parnters"
 const BannerData=[
   {
     id:1,
@@ -44,6 +46,8 @@ function App() {
 <Banner data={BannerData[0]}/>
 <Products/>
 <Banner data={BannerData[1]}/>
+<Blogs/>
+<Parnters/>
     </div>
   )
 }
