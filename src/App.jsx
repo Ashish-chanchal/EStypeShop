@@ -8,6 +8,7 @@ import watch2 from '/src/assets/category/watch2.png';
 import Products from "./components/Products/Products"
 import Blogs from "./components/Blogs/Blogs"
 import Parnters from "./components/Partners/Parnters"
+import Footer from "./components/Footer/Footer"
 const BannerData=[
   {
     id:1,
@@ -48,6 +49,7 @@ function App() {
 <Banner data={BannerData[1]}/>
 <Blogs/>
 <Parnters/>
+<Footer/>
     </div>
   )
 }
