@@ -42,18 +42,19 @@ const Hero = () => {
     infinite: true,
     speed: 800,
 
-    slidesToSchroll: 1,
+    slidesToScroll: 1,
     autoplaySpeed: 4000,
     cssEase: "ease-in-out",
     pauseOnHover: false,
     pauseOnFocus: true,
   };
+  const SliderComponent = Slider.default || Slider;
   return (
     <div className="container">
       <div className="overflow-hidden rounded-3xl min-h-[500px] sm:min-h-[650px] hero-bg-color flex justify-center items-center">
         <div className="container  pb-8 sm:pb-0">
           {/* Hero Section */}
-          <Slider {...settings}>
+          <SliderComponent {...settings}>
             {HeroData.map((item) => (
               <div key={item.id}>
                 <div className="grid grid-cols-1 sm:grid-cols-2">
@@ -88,7 +89,7 @@ const Hero = () => {
                 </div>
               </div>
             ))}
-          </Slider>
+          </SliderComponent>
         </div>
       </div>
     </div>
