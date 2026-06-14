@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaMobileAlt } from "react-icons/fa";
 import { FaLocationArrow } from "react-icons/fa6";
 
@@ -7,39 +8,39 @@ const FooterLinks = [
         {
           id: 1,
           title: "Home",
-          link: "#",
+          link: "/",
         },
         {
           id: 2,
           title: "About",
-          link: "#",
+          link: "/about",
         },
         {
           id: 3,
           title: "Contact",
-          link: "#",
+          link: "/contact",
         },
         {
           id: 4,
-          title: "Blog",
-          link: "#",
+          title: "Blogs",
+          link: "/blogs",
         },
       ],
       [
         {
           id: 5,
           title: "Trending Products",
-          link: "#",
+          link: "/shop?filter=trending",
         },
         {
           id: 6,
           title: "Best Selling",
-          link: "#",
+          link: "/shop?filter=best-selling",
         },
         {
           id: 7,
           title: "Top Rated",
-          link: "#",
+          link: "/shop?filter=top-rated",
         },
         
       ]
@@ -51,12 +52,12 @@ const Footer = () => {
       <div className="container">
         <div className="grid md:grid-cols-3 pb-20 pt-5">
           <div className="py-8 px-4">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-primary font-semibold tracking-widest text-2xl uppercase sm:text-3xl"
             >
               EStyleShop
-            </a>
+            </Link>
             <p className="text-gray-600 lg:pr-24 pt-3 dark:text-white">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Cupiditate iure dolor, tempore iusto porro vel optio unde magnam
@@ -67,6 +68,7 @@ const Footer = () => {
               <a
                 href="https://www.linkedin.com/in/ashishchanchal/"
                 target="_blank"
+                rel="noreferrer"
               >
                 Ashish Chanchal
               </a>
@@ -78,7 +80,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 {FooterLinks[0].map((data) => (
                     <li key={data.id} >
-                    <a href={data.link} className="text-gray-600 hover:text-black hover:dark:text-white duration-300">{data.title}</a>
+                    <Link to={data.link} className="text-gray-600 hover:text-black hover:dark:text-white duration-300">{data.title}</Link>
                   </li>
                 ))}
               </ul>
@@ -88,7 +90,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 {FooterLinks[1].map((data) => (
                     <li key={data.id} >
-                    <a href={data.link} className="text-gray-600 hover:text-black hover:dark:text-white duration-300">{data.title}</a>
+                    <Link to={data.link} className="text-gray-600 hover:text-black hover:dark:text-white duration-300">{data.title}</Link>
                   </li>
                 ))}
               </ul>
