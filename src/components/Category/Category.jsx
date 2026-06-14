@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Image1 from "../../assets/category/earphone.png";
 import Image2 from "../../assets/category/watch.png";
@@ -6,7 +7,6 @@ import Image3 from "../../assets/category/macbook.png";
 import Image4 from "../../assets/category/gaming.png";
 import Image5 from "../../assets/category/vr.png";
 import Image6 from "../../assets/category/speaker.png";
-import Button from '../Shared/Button';
 
 const Category = () => {
   return (
@@ -27,8 +27,9 @@ const Category = () => {
                         <p className='mb-[2px] text-gray-400'>Enjoy</p>
                         <p className='text-2xl font-semibold mb-[2px]'>With</p>
                         <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>EarPhones</p>
-                        <Button text="Browse" bgColor="bg-primary"
-                        textColor={"text-white"} />
+                        <Link to="/shop?category=Headphones" className="bg-primary text-white w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
+                          Browse
+                        </Link>
                     </div>
                 </div>
                 <motion.img 
@@ -51,8 +52,9 @@ const Category = () => {
                         <p className='mb-[2px] text-white'>Enjoy</p>
                         <p className='text-2xl font-semibold mb-[2px]'>With</p>
                         <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Gadget</p>
-                        <Button text="Browse" bgColor="bg-white mt-2"
-                        textColor={"text-brandYellow"} />
+                        <Link to="/shop?category=Smartwatch" className="bg-white mt-2 text-brandYellow w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
+                          Browse
+                        </Link>
                     </div>
                 </div>
                 <motion.img 
@@ -75,8 +77,9 @@ const Category = () => {
                         <p className='mb-[2px] text-white'>Enjoy</p>
                         <p className='text-2xl font-semibold mb-[2px]'>With</p>
                         <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Laptop</p>
-                        <Button text="Browse" bgColor="bg-white mt-2"
-                        textColor={"text-primary"} />
+                        <Link to="/shop?category=Laptops" className="bg-white mt-2 text-primary w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
+                          Browse
+                        </Link>
                     </div>
                 </div>
                 <motion.img 
@@ -101,8 +104,9 @@ const Category = () => {
                         <p className='mb-[2px] text-gray-400'>Enjoy</p>
                         <p className='text-2xl font-semibold mb-[2px]'>With</p>
                         <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Gaming</p>
-                        <Button text="Browse" bgColor="bg-primary"
-                        textColor={"text-white"} />
+                        <Link to="/shop" className="bg-primary text-white w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
+                          Browse
+                        </Link>
                     </div>
                 </div>
                 <motion.img 
@@ -125,8 +129,9 @@ const Category = () => {
                         <p className='mb-[2px] text-white'>Enjoy</p>
                         <p className='text-2xl font-semibold mb-[2px]'>With</p>
                         <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Virtual </p>
-                        <Button text="Browse" bgColor="bg-white mt-2"
-                        textColor={"text-brandGreen"} />
+                        <Link to="/shop?category=VR Headsets" className="bg-white mt-2 text-brandGreen w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
+                          Browse
+                        </Link>
                     </div>
                 </div>
                 <motion.img 
@@ -149,8 +154,9 @@ const Category = () => {
                         <p className='mb-[2px] text-white'>Enjoy</p>
                         <p className='text-2xl font-semibold mb-[2px]'>With</p>
                         <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Speaker</p>
-                        <Button text="Browse" bgColor="bg-white mt-2"
-                        textColor={"text-brandBlue"} />
+                        <Link to="/shop?category=Speakers" className="bg-white mt-2 text-brandBlue w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
+                          Browse
+                        </Link>
                     </div>
                 </div>
                 <motion.img 

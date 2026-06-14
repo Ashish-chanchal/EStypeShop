@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Heading from "../components/Shared/Heading";
@@ -8,11 +8,20 @@ const Shop = () => {
   const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
   const filterParam = queryParams.get("filter"); // "trending", "best-selling", "top-rated"
+  const categoryParam = queryParams.get("category"); // e.g. "Headphones"
 
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [maxPrice, setMaxPrice] = useState(1500);
   const [sortBy, setSortBy] = useState("default");
+
+  useEffect(() => {
+    if (categoryParam) {
+      setSelectedCategory(categoryParam);
+    } else {
+      setSelectedCategory("All");
+    }
+  }, [categoryParam]);
 
   const categories = ["All", "Headphones", "Smartwatch", "Laptops", "VR Headsets", "Speakers"];
 

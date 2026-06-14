@@ -58,11 +58,6 @@ const Footer = () => {
             >
               EStyleShop
             </Link>
-            <p className="text-gray-600 lg:pr-24 pt-3 dark:text-white">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Cupiditate iure dolor, tempore iusto porro vel optio unde magnam
-              alias debitis?
-            </p>
             <p className="text-gray-500 mt-4">
               Made by{" "}
               <a

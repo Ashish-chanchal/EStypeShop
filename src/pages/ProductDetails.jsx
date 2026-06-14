@@ -36,20 +36,20 @@ const ProductDetails = () => {
   return (
     <div className="pt-24 min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
       <div className="container py-8 max-w-6xl">
-        
+
         {/* Breadcrumbs */}
         <div className="text-sm text-gray-500 mb-6 flex gap-2 items-center">
-          <Link to="/" className="hover:text-primary">Home</Link> / 
-          <Link to="/shop" className="hover:text-primary">Shop</Link> / 
+          <Link to="/" className="hover:text-primary">Home</Link> /
+          <Link to="/shop" className="hover:text-primary">Shop</Link> /
           <span className="font-semibold text-gray-800 dark:text-gray-200 truncate max-w-[200px]">{product.name}</span>
         </div>
 
         {/* Product Info Block */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white dark:bg-gray-800 p-6 md:p-10 rounded-3xl border border-gray-100 dark:border-gray-700/50 shadow-sm">
-          
+
           {/* Left: Gallery & Zoom Display */}
           <div className="flex flex-col items-center">
-            <motion.div 
+            <motion.div
               className="bg-gray-50 dark:bg-gray-900/60 p-8 rounded-3xl aspect-square flex items-center justify-center w-full max-w-[400px] border border-gray-100 dark:border-gray-800 relative overflow-hidden"
               whileHover={{ scale: 1.02 }}
             >
@@ -68,15 +68,14 @@ const ProductDetails = () => {
                 className="w-full h-full max-h-[300px] object-contain drop-shadow-xl"
               />
             </motion.div>
-            
+
             {/* Gallery Thumbnails */}
             <div className="flex gap-4 mt-6">
               {[1, 2, 3].map((thumb) => (
-                <button 
+                <button
                   key={thumb}
-                  className={`w-16 h-16 p-2 rounded-xl border-2 transition-all bg-gray-50 dark:bg-gray-900/30 ${
-                    thumb === 1 ? "border-primary scale-105" : "border-gray-100 dark:border-gray-850 opacity-60 hover:opacity-100"
-                  }`}
+                  className={`w-16 h-16 p-2 rounded-xl border-2 transition-all bg-gray-50 dark:bg-gray-900/30 ${thumb === 1 ? "border-primary scale-105" : "border-gray-100 dark:border-gray-850 opacity-60 hover:opacity-100"
+                    }`}
                 >
                   <img src={product.img} alt="" className="w-full h-full object-contain" />
                 </button>
@@ -134,11 +133,10 @@ const ProductDetails = () => {
                       key={idx}
                       onClick={() => setSelectedColor(`Color ${idx + 1}`)}
                       style={{ backgroundColor: colorHex }}
-                      className={`w-8 h-8 rounded-full border-2 transition-transform ${
-                        selectedColor === `Color ${idx + 1}`
+                      className={`w-8 h-8 rounded-full border-2 transition-transform ${selectedColor === `Color ${idx + 1}`
                           ? "border-primary scale-110 ring-2 ring-primary/20"
                           : "border-transparent hover:scale-105"
-                      }`}
+                        }`}
                     />
                   ))}
                 </div>
@@ -148,14 +146,14 @@ const ProductDetails = () => {
               <div className="mb-8 flex items-center gap-4">
                 <span className="text-xs font-bold uppercase tracking-widest text-gray-400">Qty:</span>
                 <div className="flex items-center border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
-                  <button 
+                  <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     className="px-3 py-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 font-bold transition-all"
                   >
                     -
                   </button>
                   <span className="px-4 font-bold text-sm select-none">{quantity}</span>
-                  <button 
+                  <button
                     onClick={() => setQuantity(quantity + 1)}
                     className="px-3 py-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 font-bold transition-all"
                   >
@@ -167,13 +165,13 @@ const ProductDetails = () => {
 
             {/* Purchase buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
+              <button
                 onClick={() => addToCart(product, quantity, selectedColor)}
                 className="flex-1 py-4 bg-primary text-white font-bold rounded-2xl hover:scale-[1.01] active:scale-[0.99] transition-transform duration-200 shadow-lg shadow-primary/20"
               >
                 Add to Cart
               </button>
-              <button 
+              <button
                 onClick={() => {
                   addToCart(product, quantity, selectedColor);
                   navigate("/cart");
@@ -191,17 +189,15 @@ const ProductDetails = () => {
           <div className="flex border-b border-gray-100 dark:border-gray-700 gap-8 mb-6">
             <button
               onClick={() => setActiveTab("specs")}
-              className={`pb-3 font-bold text-sm tracking-wider uppercase transition-colors relative ${
-                activeTab === "specs" ? "text-primary border-b-2 border-primary" : "text-gray-400"
-              }`}
+              className={`pb-3 font-bold text-sm tracking-wider uppercase transition-colors relative ${activeTab === "specs" ? "text-primary border-b-2 border-primary" : "text-gray-400"
+                }`}
             >
               Specifications
             </button>
             <button
               onClick={() => setActiveTab("shipping")}
-              className={`pb-3 font-bold text-sm tracking-wider uppercase transition-colors relative ${
-                activeTab === "shipping" ? "text-primary border-b-2 border-primary" : "text-gray-400"
-              }`}
+              className={`pb-3 font-bold text-sm tracking-wider uppercase transition-colors relative ${activeTab === "shipping" ? "text-primary border-b-2 border-primary" : "text-gray-400"
+                }`}
             >
               Shipping & Returns
             </button>
@@ -235,16 +231,16 @@ const ProductDetails = () => {
             <h2 className="text-2xl font-black mb-6">Related Products</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
               {relatedProducts.map((p) => (
-                <Link 
-                  to={`/product/${p.id}`} 
+                <Link
+                  to={`/product/${p.id}`}
                   key={p.id}
                   className="group bg-white dark:bg-gray-800 rounded-2xl p-4 border border-gray-100 dark:border-gray-700/50 shadow-sm hover:shadow-lg transition-all"
                 >
                   <div className="aspect-square bg-gray-50 dark:bg-gray-900/40 rounded-xl overflow-hidden flex items-center justify-center p-4">
-                    <img 
-                      src={p.img} 
-                      alt={p.name} 
-                      className="max-h-[120px] object-contain group-hover:scale-105 transition-transform duration-300" 
+                    <img
+                      src={p.img}
+                      alt={p.name}
+                      className="max-h-[120px] object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <h3 className="font-bold mt-4 text-gray-800 dark:text-gray-200 line-clamp-1 group-hover:text-primary transition-colors text-sm">
