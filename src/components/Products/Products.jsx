@@ -1,86 +1,52 @@
-import React from 'react'
-import Heading from '../Shared/Heading'
-import Img1 from '../../assets/product/p-1.jpg'
-import Img2 from '../../assets/product/p-2.jpg'
-import Img3 from '../../assets/product/p-3.jpg'
-import Img4 from '../../assets/product/p-4.jpg'
-import Img5 from '../../assets/product/p-5.jpg'
-import Img6 from '../../assets/product/p-6.jpg'
-import Img7 from '../../assets/product/p-7.jpg'
-import ProductCard from './ProductCard'
+import React from "react";
+import { Link } from "react-router-dom";
+import { FiArrowRight } from "react-icons/fi";
+import Heading from "../Shared/Heading";
+import ProductCard from "./ProductCard";
+import { ShopProducts } from "../../data/products";
 
-
-const ProductsData=[
-    {
-        id:1,
-        img:Img1,
-        title:"Boat Headphones",
-        price:"$ 120",
-        asoDelay:"0",
-    },
-    {
-        id:2,
-        img:Img2,
-        title:"Rocky Mountain",
-        price:"$ 420",
-        asoDelay:"200",
-    },
-    {
-        id:3,
-        img:Img3,
-        title:"Boat Headphones",
-        price:"$ 120",
-        asoDelay:"400",
-    },
-    {
-        id:4,
-        img:Img4,
-        title:"Boat Headphones",
-        price:"$ 120",
-        asoDelay:"600",
-    },
-    {
-        id:5,
-        img:Img5,
-        title:"Boat Headphones",
-        price:"$ 120",
-        asoDelay:"800",
-    },
-    {
-        id:6,
-        img:Img6,
-        title:"Boat Headphones",
-        price:"$ 120",
-        asoDelay:"1000",
-    },
-    {
-        id:7,
-        img:Img7,
-        title:"Boat Headphones",
-        price:"$ 120",
-        asoDelay:"1200",
-    },
-    
-]
+const tabs = [
+  { key: "all", label: "All" },
+  { key: "trending", label: "Trending", test: (p) => p.isTrending },
+  { key: "best", label: "Best sellers", test: (p) => p.isBestSelling },
+  { key: "new", label: "New arrivals", test: (p) => p.isNew },
+];
 
 const Products = () => {
+  const [active, setActive] = React.useState("all");
+  const tab = tabs.find((t) => t.key === active);
+  const list = (tab.test ? ShopProducts.filter(tab.test) : ShopProducts).slice(0, 8);
+
   return (
-    <div>
-      <div className="container">
-        {/* header section  */}
-        <Heading title='Our Products' subtitle='Explore Our Products'/>
-
-        {/* body section  */}
-       <div className="mb-10">
-       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 place-items-center">
-            {ProductsData.map((data)=>(
-                <ProductCard data={data} key={data.id}/>
-            ))}
-            </div>
-       </div>
+    <section className="container py-20">
+      <Heading eyebrow="Our products" title="Featured this week" />
+      <div className="mb-10 flex flex-wrap justify-center gap-2">
+        {tabs.map((t) => (
+          <button
+            key={t.key}
+            onClick={() => setActive(t.key)}
+            className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
+              active === t.key
+                ? "bg-ink-900 text-white dark:bg-white dark:text-ink-900"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-white/5 dark:text-gray-300 dark:hover:bg-white/10"
+            }`}
+          >
+            {t.label}
+          </button>
+        ))}
       </div>
-    </div>
-  )
-}
+      <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+        {list.map((p) => (
+          <ProductCard data={p} key={p.id} />
+        ))}
+      </div>
+      <div className="mt-12 text-center">
+        <Link to="/shop" className="btn-ghost">
+          View all products <FiArrowRight />
+        </Link>
+      </div>
+    </section>
+  );
+};
 
-export default Products
+export default Products;

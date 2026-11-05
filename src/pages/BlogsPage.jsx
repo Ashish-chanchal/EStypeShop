@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Heading from "../components/Shared/Heading";
+import PageHeader from "../components/Shared/PageHeader";
 
 // Sample blog images
 import Blog1 from "../assets/blogs/blog-1.jpg";
@@ -56,33 +56,33 @@ const BlogsPage = () => {
   );
 
   return (
-    <div className="pt-24 min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-      <div className="container py-8">
-        <Heading title="Our Blogs" subtitle="Tech, Audio & Design News" />
+    <div>
+      <PageHeader eyebrow="The journal" title="Stories, guides & reviews" description="Tech, audio and design — written by people who actually use the gear." crumbs={[{ label: "Journal" }]} />
+      <div className="container py-10">
 
         {/* Search */}
-        <div className="max-w-md mx-auto my-8">
+        <div className="max-w-md mb-10">
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search articles by title or category..."
-            className="w-full px-5 py-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+            placeholder="Search articles…"
+            className="w-full px-5 py-3 rounded-2xl border border-gray-200 dark:border-white/5 bg-white dark:bg-ink-800 shadow-soft focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredBlogs.map((post) => (
             <motion.div
               key={post.id}
               whileHover={{ y: -6 }}
-              className="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700/50 flex flex-col h-full"
+              className="bg-white dark:bg-ink-800 rounded-3xl overflow-hidden shadow-soft hover:shadow-lift transition-all duration-300 border border-gray-100 dark:border-white/5 flex flex-col h-full"
             >
               {/* Image */}
               <div className="overflow-hidden aspect-video relative">
                 <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-                <span className="absolute top-4 right-4 bg-primary text-white text-xs px-3 py-1 rounded-full font-bold">
+                <span className="absolute top-4 left-4 bg-white/90 text-ink-900 backdrop-blur text-xs px-3 py-1 rounded-full font-semibold">
                   {post.category}
                 </span>
               </div>
@@ -101,7 +101,7 @@ const BlogsPage = () => {
                   onClick={() => setSelectedBlog(post)}
                   className="text-primary font-bold text-sm text-left hover:underline w-fit"
                 >
-                  Read More &rarr;
+                  Read article →
                 </button>
               </div>
             </motion.div>
@@ -123,7 +123,7 @@ const BlogsPage = () => {
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 20 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white dark:bg-gray-800 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative shadow-2xl"
+                className="bg-white dark:bg-ink-800 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative shadow-2xl"
               >
                 <button
                   onClick={() => setSelectedBlog(null)}

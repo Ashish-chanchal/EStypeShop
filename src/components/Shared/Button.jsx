@@ -1,12 +1,13 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Button = ({text,bgColor,textColor,handler=()=>{}}) => {
-  return (
-    <button
-    className={`${bgColor} ${textColor} w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10`}>
-      {text}
-    </button>
-  )
-}
+const variants = { primary: "btn-primary", dark: "btn-dark", ghost: "btn-ghost", light: "btn-light" };
 
-export default Button
+const Button = ({ text, children, to, variant = "primary", className = "", handler, ...rest }) => {
+  const cls = `${variants[variant] || variants.primary} ${className}`;
+  const content = children || text;
+  if (to) return <Link to={to} className={cls} {...rest}>{content}</Link>;
+  return <button onClick={handler} className={cls} {...rest}>{content}</button>;
+};
+
+export default Button;

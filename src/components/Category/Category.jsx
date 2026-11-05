@@ -1,6 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
+import Heading from "../Shared/Heading";
 import Image1 from "../../assets/category/earphone.png";
 import Image2 from "../../assets/category/watch.png";
 import Image3 from "../../assets/category/macbook.png";
@@ -8,167 +10,53 @@ import Image4 from "../../assets/category/gaming.png";
 import Image5 from "../../assets/category/vr.png";
 import Image6 from "../../assets/category/speaker.png";
 
-const Category = () => {
-  return (
-    <div className='py-8'>
-      <div className=' container '>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-            {/* first div  */}
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className='py-10 pl-5 bg-gradient-to-r from-black/90 to-black/70 text-white rounded-3xl relative h-[320px] flex items-end overflow-hidden'
-            >
-                <div >
-                    <div className='mb-4 '>
-                        <p className='mb-[2px] text-gray-400'>Enjoy</p>
-                        <p className='text-2xl font-semibold mb-[2px]'>With</p>
-                        <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>EarPhones</p>
-                        <Link to="/shop?category=Headphones" className="bg-primary text-white w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
-                          Browse
-                        </Link>
-                    </div>
-                </div>
-                <motion.img 
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  src={Image1} alt="Headphones" className='w-[320px] absolute bottom-0'
-                />
-            </motion.div>
-            {/* second div  */}
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className='py-10 pl-5 bg-gradient-to-r from-brandYellow to-brandYellow/90 text-white rounded-3xl relative h-[320px] flex items-end overflow-hidden'
-            >
-                <div >
-                    <div className='mb-4 '>
-                        <p className='mb-[2px] text-white'>Enjoy</p>
-                        <p className='text-2xl font-semibold mb-[2px]'>With</p>
-                        <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Gadget</p>
-                        <Link to="/shop?category=Smartwatch" className="bg-white mt-2 text-brandYellow w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
-                          Browse
-                        </Link>
-                    </div>
-                </div>
-                <motion.img 
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ repeat: Infinity, duration: 4.2, ease: "easeInOut" }}
-                  src={Image2} alt="Watch" className='w-[320px] absolute -right-16 top-[0px]'
-                />
-            </motion.div>
-            {/* third div  */}
-            <motion.div 
-              whileHover={{ scale: 1.01 }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className='py-10 sm:col-span-2 pl-5 bg-gradient-to-r from-primary to-primary/90 text-white rounded-3xl relative h-[320px] flex items-end overflow-hidden'
-            >
-                <div >
-                    <div className='mb-4 '>
-                        <p className='mb-[2px] text-white'>Enjoy</p>
-                        <p className='text-2xl font-semibold mb-[2px]'>With</p>
-                        <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Laptop</p>
-                        <Link to="/shop?category=Laptops" className="bg-white mt-2 text-primary w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
-                          Browse
-                        </Link>
-                    </div>
-                </div>
-                <motion.img 
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
-                  src={Image3} alt="Watch" className='w-[320px] absolute right-0 top-[0px]'
-                />
-            </motion.div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
-            {/* first div  */}
-            <motion.div 
-              whileHover={{ scale: 1.01 }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className='py-10 sm:col-span-2 pl-5 bg-gradient-to-r from-gray-400 to-brandWhite/90 text-white rounded-3xl relative h-[320px] flex items-start overflow-hidden'
-            >
-                <div >
-                    <div className='mb-4 '>
-                        <p className='mb-[2px] text-gray-400'>Enjoy</p>
-                        <p className='text-2xl font-semibold mb-[2px]'>With</p>
-                        <p className='text-4xl xl:text-5xl font-bold opacity-20 mb-2'>Gaming</p>
-                        <Link to="/shop" className="bg-primary text-white w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
-                          Browse
-                        </Link>
-                    </div>
-                </div>
-                <motion.img 
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ repeat: Infinity, duration: 4.3, ease: "easeInOut" }}
-                  src={Image4} alt="Headphones" className='w-[320px] absolute bottom-0 right-10'
-                />
-            </motion.div>
-            {/* second div  */}
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className='py-10 pl-5 bg-gradient-to-r from-brandGreen to-brandGreen/90 text-white rounded-3xl relative h-[320px] flex items-start overflow-hidden'
-            >
-                <div >
-                    <div className='mb-4 '>
-                        <p className='mb-[2px] text-white'>Enjoy</p>
-                        <p className='text-2xl font-semibold mb-[2px]'>With</p>
-                        <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Virtual </p>
-                        <Link to="/shop?category=VR Headsets" className="bg-white mt-2 text-brandGreen w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
-                          Browse
-                        </Link>
-                    </div>
-                </div>
-                <motion.img 
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ repeat: Infinity, duration: 4.1, ease: "easeInOut" }}
-                  src={Image5} alt="Watch" className='w-[250px] absolute right-5 bottom-[0px]'
-                />
-            </motion.div>
-            {/* third div  */}
-            <motion.div 
-              whileHover={{ scale: 1.02 }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className='py-10  pl-5 bg-gradient-to-r from-brandBlue to-brandBlue/90 text-white rounded-3xl relative h-[320px] flex items-start overflow-hidden'
-            >
-                <div >
-                    <div className='mb-4 top-10'>
-                        <p className='mb-[2px] text-white'>Enjoy</p>
-                        <p className='text-2xl font-semibold mb-[2px]'>With</p>
-                        <p className='text-4xl xl:text-5xl font-bold opacity-40 mb-2'>Speaker</p>
-                        <Link to="/shop?category=Speakers" className="bg-white mt-2 text-brandBlue w-fit cursor-pointer hover:scale-105 duration-300 py-2 px-4 rounded-full relative z-10 inline-block text-sm font-semibold">
-                          Browse
-                        </Link>
-                    </div>
-                </div>
-                <motion.img 
-                  animate={{ y: [0, -7, 0] }}
-                  transition={{ repeat: Infinity, duration: 4.4, ease: "easeInOut" }}
-                  src={Image6} alt="Watch" className='w-[200px] absolute right-0 bottom-0'
-                />
-            </motion.div>
-        </div>
-      </div>
+const categories = [
+  { name: "Earphones", count: "6 products", link: "/shop?category=Headphones", img: Image1, span: "", tone: "bg-ink-900 text-white", imgCls: "w-56 -bottom-4 -right-4" },
+  { name: "Smartwatches", count: "2 products", link: "/shop?category=Smartwatch", img: Image2, span: "", tone: "bg-amber-100 text-ink-900 dark:bg-amber-400/15 dark:text-white", imgCls: "w-56 -right-10 -bottom-6" },
+  { name: "Laptops", count: "1 product", link: "/shop?category=Laptops", img: Image3, span: "sm:col-span-2", tone: "bg-primary text-white", imgCls: "w-72 -right-6 bottom-0" },
+  { name: "Gaming", count: "Explore all", link: "/shop", img: Image4, span: "sm:col-span-2", tone: "bg-gray-100 text-ink-900 dark:bg-ink-800 dark:text-white", imgCls: "w-72 right-4 -bottom-6" },
+  { name: "VR Headsets", count: "1 product", link: "/shop?category=VR Headsets", img: Image5, span: "", tone: "bg-emerald-100 text-ink-900 dark:bg-emerald-400/15 dark:text-white", imgCls: "w-52 -right-6 bottom-0" },
+  { name: "Speakers", count: "1 product", link: "/shop?category=Speakers", img: Image6, span: "", tone: "bg-blue-100 text-ink-900 dark:bg-blue-500/15 dark:text-white", imgCls: "w-40 right-2 bottom-0" },
+];
+
+const Category = () => (
+  <section className="container py-20">
+    <Heading
+      eyebrow="Shop by category"
+      title="Find your next favourite"
+      align="left"
+      action={<Link to="/shop" className="inline-flex items-center gap-1 text-sm font-semibold text-gray-600 hover:text-primary dark:text-gray-300">View all categories <FiArrowUpRight /></Link>}
+    />
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {categories.map((c, i) => (
+        <motion.div
+          key={c.name}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45, delay: (i % 3) * 0.08 }}
+          className={c.span}
+        >
+          <Link to={c.link} className={`group relative flex h-64 overflow-hidden rounded-3xl p-7 ${c.tone}`}>
+            <div className="relative z-10 flex flex-col">
+              <p className="text-xs font-semibold uppercase tracking-widest opacity-60">{c.count}</p>
+              <h3 className="mt-1 text-2xl font-extrabold">{c.name}</h3>
+              <span className="mt-auto flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-ink-900 shadow-sm transition-all duration-300 group-hover:w-28 group-hover:gap-1">
+                <span className="hidden text-sm font-semibold group-hover:inline">Browse</span>
+                <FiArrowUpRight className="transition-transform group-hover:rotate-45" />
+              </span>
+            </div>
+            <img
+              src={c.img}
+              alt=""
+              loading="lazy"
+              className={`absolute object-contain drop-shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-105 ${c.imgCls}`}
+            />
+          </Link>
+        </motion.div>
+      ))}
     </div>
-  )
-}
+  </section>
+);
 
 export default Category;

@@ -1,23 +1,26 @@
-import React from 'react'
-import brand1 from '../../assets/brand/br-1.png'
-import brand2 from '../../assets/brand/br-2.png'
-import brand3 from '../../assets/brand/br-3.png'
-import brand4 from '../../assets/brand/br-4.png'
-import brand5 from '../../assets/brand/br-5.png'
-const Parnters = () => {
-  return (
-    <div className='py-8 mt-24 bg-white dark:bg-gray-600'>
-      <div className="container">
-        <div className="grid grid-cols-5 gap-3 place-items-center opacity-50">
-            <img src={brand1} alt="brand"  className='w-[80px] dark:invert'/>
-            <img src={brand2} alt="brand"  className='w-[80px] dark:invert'/>
-            <img src={brand3} alt="brand"  className='w-[80px] dark:invert'/>
-            <img src={brand4} alt="brand"  className='w-[80px] dark:invert'/>
-            <img src={brand5} alt="brand"  className='w-[80px] dark:invert'/>
+import React from "react";
+import p1 from "../../assets/brand-svg/partner-1.svg";
+import p2 from "../../assets/brand-svg/partner-2.svg";
+import p3 from "../../assets/brand-svg/partner-3.svg";
+import p4 from "../../assets/brand-svg/partner-4.svg";
+import p5 from "../../assets/brand-svg/partner-5.svg";
+import p6 from "../../assets/brand-svg/partner-6.svg";
+
+const logos = [p1, p2, p3, p4, p5, p6];
+
+const Parnters = () => (
+  <section className="border-y border-gray-100 py-10 dark:border-white/5">
+    <div className="container">
+      <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">Trusted by leading brands</p>
+      <div className="relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+        <div className="flex w-max animate-marquee items-center gap-16 hover:[animation-play-state:paused]">
+          {[...logos, ...logos].map((src, i) => (
+            <img key={i} src={src} alt="Partner brand" className="h-8 w-auto opacity-40 transition hover:opacity-80 dark:invert" />
+          ))}
         </div>
       </div>
     </div>
-  )
-}
+  </section>
+);
 
-export default Parnters
+export default Parnters;

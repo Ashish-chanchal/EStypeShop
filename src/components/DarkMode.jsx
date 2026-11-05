@@ -1,31 +1,27 @@
-import React from 'react'
-import LightButton from "../assets/website/light-mode-button.png"
-import DarkButton from "../assets/website/dark-mode-button.png"
+import React from "react";
+import { FiMoon, FiSun } from "react-icons/fi";
+
+const getInitial = () => {
+  try { return localStorage.getItem("theme") || "light"; } catch { return "light"; }
+};
+
 const DarkMode = () => {
-    const [theme,setTheme]=React.useState(localStorage.getItem("theme")? localStorage.getItem("theme"):"light");
+  const [theme, setTheme] = React.useState(getInitial);
 
-    const elemnet = document.documentElement;
-    React.useEffect(()=>{
-       localStorage.setItem("theme",theme);
-       if(theme==="dark"){
-        elemnet.classList.add("dark");
-           elemnet.classList.add("dark");
-         }
-            else{
-                elemnet.classList.remove("light");
-            elemnet.classList.remove("dark");
-            }
-    },[theme])
+  React.useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    try { localStorage.setItem("theme", theme); } catch { /* ignore */ }
+  }, [theme]);
+
   return (
-    <div className='relative'>
-      <img 
-      onClick={()=>setTheme(theme==="dark"?"light":"dark")}
-      src={LightButton} alt="lightButton"  className={`w-12 cursor-pointer absolute right-0 z-10 ${theme==='dark'?'opacity-0':"opacity-100"} transition-all duration-200` }/>
-      <img 
-      onClick={()=>setTheme(theme==="light"?"dark":"light")}
-      src={DarkButton} alt="darkButton"  className={`w-12 cursor-pointer  ${theme==='dark'?'opacity-100':"opacity-0"}` }/>
-    </div>
-  )
-}
+    <button
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className="icon-btn"
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+    >
+      {theme === "dark" ? <FiSun className="text-lg" /> : <FiMoon className="text-lg" />}
+    </button>
+  );
+};
 
-export default DarkMode
+export default DarkMode;
